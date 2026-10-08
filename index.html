@@ -1,124 +1,313 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Meilleures Formules Immo 🌸</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="stylesheet" href="style.css">
+    <meta
+        name="description"
+        content="Meilleures Formules Immo — calculateurs immobiliers gratuits pour analyser rentabilité, cashflow, endettement et capacité d'emprunt."
+    >
+
+    <meta
+        name="theme-color"
+        content="#e93682"
+    >
+
+    <title>
+        Meilleures Formules Immo 🌸
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 
 <body>
 
-    <header class="hero">
-        <div class="hero-content">
-            <span class="badge">🏠 OUTILS IMMOBILIERS</span>
 
-            <h1>Meilleures<br><span>Formules Immo</span> 🌸</h1>
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                🌸 OUTILS IMMOBILIERS
+            </div>
+
+            <h1>
+                Meilleures
+                <span>Formules Immo</span>
+            </h1>
 
             <p>
-                Les calculateurs essentiels pour analyser
-                ton investissement immobilier.
+                Les calculs essentiels pour analyser
+                rapidement tes investissements immobiliers.
+                Simples, rapides et gratuits.
             </p>
+
         </div>
+
     </header>
 
 
+    <!-- =========================
+         CONTENU
+    ========================== -->
+
     <main class="container">
 
-        <section class="intro">
-            <h2>Que veux-tu calculer ?</h2>
-            <p>Choisis un calculateur pour commencer.</p>
-        </section>
+        <div class="intro">
 
+            <h2>
+                Choisis ton calculateur
+            </h2>
+
+            <p>
+                Sélectionne un outil pour commencer ton analyse.
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             CARTES
+        ========================== -->
 
         <section class="calculators">
 
-            <!-- RENTABILITÉ BRUTE -->
-            <div class="card" onclick="showCalculator('brute')">
-                <div class="icon pink">🏠</div>
-                <div>
-                    <h3>Rentabilité brute</h3>
-                    <p>Calcule la rentabilité annuelle de ton investissement.</p>
+
+            <article
+                class="card"
+                onclick="showCalculator('brute')"
+            >
+
+                <div class="icon pink">
+                    🏠
                 </div>
-                <span class="arrow">→</span>
-            </div>
 
-
-            <!-- RENTABILITÉ NETTE -->
-            <div class="card" onclick="showCalculator('nette')">
-                <div class="icon purple">📈</div>
                 <div>
-                    <h3>Rentabilité nette</h3>
-                    <p>Prends en compte les charges, taxes et frais.</p>
+
+                    <h3>
+                        Rentabilité brute
+                    </h3>
+
+                    <p>
+                        Évalue rapidement le rendement locatif
+                        de ton investissement.
+                    </p>
+
                 </div>
-                <span class="arrow">→</span>
-            </div>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </article>
 
 
-            <!-- CASHFLOW -->
-            <div class="card" onclick="showCalculator('cashflow')">
-                <div class="icon green">💰</div>
+            <article
+                class="card"
+                onclick="showCalculator('nette')"
+            >
+
+                <div class="icon purple">
+                    📈
+                </div>
+
                 <div>
-                    <h3>Cashflow</h3>
-                    <p>Découvre ce que ton investissement te rapporte chaque mois.</p>
+
+                    <h3>
+                        Rentabilité nette
+                    </h3>
+
+                    <p>
+                        Prends en compte les charges,
+                        taxes et frais de gestion.
+                    </p>
+
                 </div>
-                <span class="arrow">→</span>
-            </div>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </article>
 
 
-            <!-- REGLE DES 70 -->
-            <div class="card" onclick="showCalculator('regle70')">
-                <div class="icon orange">🔥</div>
+            <article
+                class="card"
+                onclick="showCalculator('cashflow')"
+            >
+
+                <div class="icon green">
+                    💰
+                </div>
+
                 <div>
-                    <h3>Règle des 70</h3>
-                    <p>Vérifie rapidement si ton crédit reste raisonnable.</p>
+
+                    <h3>
+                        Cashflow
+                    </h3>
+
+                    <p>
+                        Découvre ce que ton investissement
+                        te rapporte chaque mois.
+                    </p>
+
                 </div>
-                <span class="arrow">→</span>
-            </div>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </article>
 
 
-            <!-- ENDETTEMENT -->
-            <div class="card" onclick="showCalculator('endettement')">
-                <div class="icon blue">📊</div>
+            <article
+                class="card"
+                onclick="showCalculator('regle70')"
+            >
+
+                <div class="icon orange">
+                    🔥
+                </div>
+
                 <div>
-                    <h3>Taux d'endettement</h3>
-                    <p>Calcule ton taux d'endettement mensuel.</p>
+
+                    <h3>
+                        Règle des 70
+                    </h3>
+
+                    <p>
+                        Vérifie rapidement si ta mensualité
+                        reste cohérente avec tes loyers.
+                    </p>
+
                 </div>
-                <span class="arrow">→</span>
-            </div>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </article>
 
 
-            <!-- MENSUALITE -->
-            <div class="card" onclick="showCalculator('mensualite')">
-                <div class="icon cyan">💳</div>
+            <article
+                class="card"
+                onclick="showCalculator('endettement')"
+            >
+
+                <div class="icon blue">
+                    📊
+                </div>
+
                 <div>
-                    <h3>Mensualité maximale</h3>
-                    <p>Estime la mensualité maximale possible.</p>
+
+                    <h3>
+                        Taux d'endettement
+                    </h3>
+
+                    <p>
+                        Calcule le poids de tes crédits
+                        par rapport à tes revenus.
+                    </p>
+
                 </div>
-                <span class="arrow">→</span>
-            </div>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </article>
 
 
-            <!-- CAPITAL -->
-            <div class="card" onclick="showCalculator('capital')">
-                <div class="icon gold">👏</div>
+            <article
+                class="card"
+                onclick="showCalculator('mensualite')"
+            >
+
+                <div class="icon cyan">
+                    💳
+                </div>
+
                 <div>
-                    <h3>Capital maximal</h3>
-                    <p>Estime ton montant d'emprunt maximal.</p>
+
+                    <h3>
+                        Mensualité maximale
+                    </h3>
+
+                    <p>
+                        Estime ta capacité mensuelle
+                        de remboursement.
+                    </p>
+
                 </div>
-                <span class="arrow">→</span>
-            </div>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </article>
+
+
+            <article
+                class="card"
+                onclick="showCalculator('capital')"
+            >
+
+                <div class="icon gold">
+                    👏
+                </div>
+
+                <div>
+
+                    <h3>
+                        Capital maximal
+                    </h3>
+
+                    <p>
+                        Estime le montant maximal
+                        que tu pourrais emprunter.
+                    </p>
+
+                </div>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </article>
+
 
         </section>
 
 
-        <!-- CALCULATEUR -->
+        <!-- =========================
+             CALCULATEUR
+        ========================== -->
 
-        <section id="calculator-section" class="calculator-section hidden">
+        <section
+            id="calculator-section"
+            class="calculator-section hidden"
+        >
 
-            <button class="back-button" onclick="closeCalculator()">
+            <button
+                class="back-button"
+                onclick="closeCalculator()"
+            >
                 ← Retour aux calculateurs
             </button>
 
@@ -129,15 +318,26 @@
     </main>
 
 
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
     <footer>
-        <p>🌸 Meilleures Formules Immo</p>
+
+        <p>
+            Meilleures Formules Immo 🌸
+        </p>
+
         <small>
-            Outil de simulation — Les résultats sont indicatifs.
+            Des outils simples pour mieux comprendre
+            tes projets immobiliers.
         </small>
+
     </footer>
 
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
