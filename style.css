@@ -1,0 +1,510 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #e83e8c;
+    --pink-dark: #c72d72;
+    --pink-light: #fff0f6;
+    --text: #211f2d;
+    --muted: #777381;
+    --white: #ffffff;
+    --background: #faf8fb;
+    --border: #eee8ee;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            #ffe5f0 0,
+            transparent 35%
+        ),
+        var(--background);
+
+    color: var(--text);
+    min-height: 100vh;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    background:
+        linear-gradient(
+            135deg,
+            #fce7f3,
+            #fff7fb
+        );
+
+    padding: 70px 20px 80px;
+
+    border-bottom: 1px solid #f3dce7;
+}
+
+.hero-content {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+.badge {
+    display: inline-block;
+
+    background: white;
+
+    color: var(--pink);
+
+    padding: 8px 15px;
+
+    border-radius: 50px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 5px 20px rgba(232, 62, 140, 0.08);
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 78px);
+
+    line-height: 0.95;
+
+    margin-top: 25px;
+
+    letter-spacing: -3px;
+}
+
+.hero h1 span {
+    color: var(--pink);
+}
+
+.hero p {
+    max-width: 600px;
+
+    margin: 25px auto 0;
+
+    color: var(--muted);
+
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    max-width: 1050px;
+
+    margin: auto;
+
+    padding: 60px 20px;
+}
+
+.intro {
+    margin-bottom: 30px;
+}
+
+.intro h2 {
+    font-size: 30px;
+
+    letter-spacing: -1px;
+}
+
+.intro p {
+    color: var(--muted);
+
+    margin-top: 8px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.calculators {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 16px;
+}
+
+.card {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 24px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+
+    border-color: #f0b5cf;
+
+    box-shadow:
+        0 15px 35px rgba(40, 20, 40, 0.08);
+}
+
+.card h3 {
+    font-size: 18px;
+
+    margin-bottom: 6px;
+}
+
+.card p {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.4;
+
+    padding-right: 25px;
+}
+
+.icon {
+    min-width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    font-size: 25px;
+}
+
+.icon.pink {
+    background: #ffe8f2;
+}
+
+.icon.purple {
+    background: #f0e9ff;
+}
+
+.icon.green {
+    background: #e7f8ee;
+}
+
+.icon.orange {
+    background: #fff0dd;
+}
+
+.icon.blue {
+    background: #e7f1ff;
+}
+
+.icon.cyan {
+    background: #e5f8fa;
+}
+
+.icon.gold {
+    background: #fff6d9;
+}
+
+.arrow {
+    position: absolute;
+
+    right: 20px;
+
+    color: #bbb;
+
+    font-size: 22px;
+
+    transition: 0.2s;
+}
+
+.card:hover .arrow {
+    color: var(--pink);
+
+    transform: translateX(4px);
+}
+
+
+/* =========================
+   CALCULATOR
+========================= */
+
+.calculator-section {
+    margin-top: 30px;
+}
+
+.hidden {
+    display: none;
+}
+
+.back-button {
+    border: none;
+
+    background: transparent;
+
+    color: var(--pink);
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    margin-bottom: 20px;
+}
+
+.calculator-box {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 25px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 15px 50px rgba(40, 20, 40, 0.06);
+}
+
+.calculator-box h2 {
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+.calculator-description {
+    color: var(--muted);
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+.input-group input {
+    width: 100%;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    border: 1px solid #ddd6de;
+
+    outline: none;
+
+    font-size: 16px;
+
+    transition: 0.2s;
+
+    background: #fcfbfc;
+}
+
+.input-group input:focus {
+    border-color: var(--pink);
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(232, 62, 140, 0.08);
+}
+
+.calculate-button {
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--pink),
+            #f15b9e
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.calculate-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(232, 62, 140, 0.25);
+}
+
+
+/* =========================
+   RESULTAT
+========================= */
+
+.result {
+    margin-top: 25px;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background: var(--pink-light);
+
+    border: 1px solid #f5c9dc;
+
+    text-align: center;
+}
+
+.result-title {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+}
+
+.result-value {
+    color: var(--pink);
+
+    font-size: 40px;
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+}
+
+.result-message {
+    margin-top: 10px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 40px 20px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--muted);
+}
+
+footer p {
+    color: var(--pink);
+
+    font-weight: 800;
+
+    margin-bottom: 5px;
+}
+
+footer small {
+    font-size: 12px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .hero {
+        padding: 50px 20px 60px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .calculators {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .calculator-box {
+        padding: 25px 20px;
+    }
+
+    .calculator-box h2 {
+        font-size: 26px;
+    }
+
+    .result-value {
+        font-size: 34px;
+    }
+}

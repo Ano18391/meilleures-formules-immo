@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meilleures Formules Immo 🌸</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span class="badge">🏠 OUTILS IMMOBILIERS</span>
+
+            <h1>Meilleures<br><span>Formules Immo</span> 🌸</h1>
+
+            <p>
+                Les calculateurs essentiels pour analyser
+                ton investissement immobilier.
+            </p>
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <section class="intro">
+            <h2>Que veux-tu calculer ?</h2>
+            <p>Choisis un calculateur pour commencer.</p>
+        </section>
+
+
+        <section class="calculators">
+
+            <!-- RENTABILITÉ BRUTE -->
+            <div class="card" onclick="showCalculator('brute')">
+                <div class="icon pink">🏠</div>
+                <div>
+                    <h3>Rentabilité brute</h3>
+                    <p>Calcule la rentabilité annuelle de ton investissement.</p>
+                </div>
+                <span class="arrow">→</span>
+            </div>
+
+
+            <!-- RENTABILITÉ NETTE -->
+            <div class="card" onclick="showCalculator('nette')">
+                <div class="icon purple">📈</div>
+                <div>
+                    <h3>Rentabilité nette</h3>
+                    <p>Prends en compte les charges, taxes et frais.</p>
+                </div>
+                <span class="arrow">→</span>
+            </div>
+
+
+            <!-- CASHFLOW -->
+            <div class="card" onclick="showCalculator('cashflow')">
+                <div class="icon green">💰</div>
+                <div>
+                    <h3>Cashflow</h3>
+                    <p>Découvre ce que ton investissement te rapporte chaque mois.</p>
+                </div>
+                <span class="arrow">→</span>
+            </div>
+
+
+            <!-- REGLE DES 70 -->
+            <div class="card" onclick="showCalculator('regle70')">
+                <div class="icon orange">🔥</div>
+                <div>
+                    <h3>Règle des 70</h3>
+                    <p>Vérifie rapidement si ton crédit reste raisonnable.</p>
+                </div>
+                <span class="arrow">→</span>
+            </div>
+
+
+            <!-- ENDETTEMENT -->
+            <div class="card" onclick="showCalculator('endettement')">
+                <div class="icon blue">📊</div>
+                <div>
+                    <h3>Taux d'endettement</h3>
+                    <p>Calcule ton taux d'endettement mensuel.</p>
+                </div>
+                <span class="arrow">→</span>
+            </div>
+
+
+            <!-- MENSUALITE -->
+            <div class="card" onclick="showCalculator('mensualite')">
+                <div class="icon cyan">💳</div>
+                <div>
+                    <h3>Mensualité maximale</h3>
+                    <p>Estime la mensualité maximale possible.</p>
+                </div>
+                <span class="arrow">→</span>
+            </div>
+
+
+            <!-- CAPITAL -->
+            <div class="card" onclick="showCalculator('capital')">
+                <div class="icon gold">👏</div>
+                <div>
+                    <h3>Capital maximal</h3>
+                    <p>Estime ton montant d'emprunt maximal.</p>
+                </div>
+                <span class="arrow">→</span>
+            </div>
+
+        </section>
+
+
+        <!-- CALCULATEUR -->
+
+        <section id="calculator-section" class="calculator-section hidden">
+
+            <button class="back-button" onclick="closeCalculator()">
+                ← Retour aux calculateurs
+            </button>
+
+            <div id="calculator"></div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>🌸 Meilleures Formules Immo</p>
+        <small>
+            Outil de simulation — Les résultats sont indicatifs.
+        </small>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
