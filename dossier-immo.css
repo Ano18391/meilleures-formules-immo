@@ -1,0 +1,199 @@
+.dossier-section {
+    margin: 32px 0;
+    padding: 28px;
+    border: 1px solid var(--border-color, #dce7df);
+    border-radius: 24px;
+    background: var(--card-background, #fff);
+    color: var(--text-color, #23352b);
+}
+.dossier-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+.dossier-heading h2 {
+    margin: 6px 0 8px;
+}
+.dossier-heading p {
+    margin: 0;
+}
+.dossier-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(240px, .8fr);
+    gap: 24px;
+    align-items: start;
+}
+.dossier-panel {
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid var(--border-color, #dce7df);
+    border-radius: 18px;
+    background: var(--panel-background, #f8faf8);
+}
+.dossier-panel h3 {
+    margin-top: 0;
+}
+.dossier-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+}
+.dossier-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.dossier-field.full {
+    grid-column: 1 / -1;
+}
+.dossier-field label {
+    font-size: .88rem;
+    font-weight: 600;
+}
+.dossier-field input {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid var(--border-color, #dce7df);
+    border-radius: 10px;
+    background: var(--input-background, #fff);
+    color: inherit;
+    font: inherit;
+}
+.dossier-field input:focus {
+    outline: 2px solid #6b9a79;
+    outline-offset: 1px;
+}
+.dossier-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+.dossier-secondary {
+    padding: 11px 15px;
+    border: 1px solid var(--border-color, #dce7df);
+    border-radius: 10px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+.dossier-results {
+    display: grid;
+    gap: 12px;
+}
+.dossier-result {
+    padding: 15px;
+    border: 1px solid var(--border-color, #dce7df);
+    border-radius: 13px;
+    background: var(--card-background, #fff);
+}
+.dossier-result span {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--muted-color, #64746a);
+    font-size: .84rem;
+}
+.dossier-result strong {
+    font-size: 1.35rem;
+    overflow-wrap: anywhere;
+}
+.dossier-result .positive {
+    color: #21824a;
+}
+.dossier-result .negative {
+    color: #bf3d3d;
+}
+.dossier-message {
+    margin: 14px 0;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: #edf3ed;
+    color: #294b34;
+    overflow-wrap: anywhere;
+}
+.dossier-message.error {
+    background: #fff0ed;
+    color: #8c3024;
+}
+.dossier-message[hidden] {
+    display: none;
+}
+.dossier-list {
+    display: grid;
+    gap: 10px;
+}
+.dossier-list-item {
+    display: grid;
+    gap: 5px;
+    width: 100%;
+    padding: 13px;
+    border: 1px solid var(--border-color, #dce7df);
+    border-radius: 12px;
+    background: var(--card-background, #fff);
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+.dossier-list-item:hover {
+    border-color: #78a486;
+}
+.dossier-list-item span,
+.dossier-empty {
+    color: var(--muted-color, #64746a);
+    font-size: .86rem;
+    overflow-wrap: anywhere;
+}
+.dossier-locked {
+    padding: 22px;
+    border: 1px dashed var(--border-color, #dce7df);
+    border-radius: 16px;
+}
+.dossier-locked p {
+    line-height: 1.6;
+}
+@media (max-width: 850px) {
+    .dossier-layout {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 520px) {
+    .dossier-section {
+        padding: 16px;
+    }
+    .dossier-panel {
+        padding: 14px;
+    }
+    .dossier-fields {
+        grid-template-columns: 1fr;
+    }
+    .dossier-field.full {
+        grid-column: auto;
+    }
+}
+
+.dossier-delete {
+    padding: 11px 15px;
+    border: 1px solid #d94b4b;
+    border-radius: 10px;
+    background: #fff1f1;
+    color: #a51f1f;
+    font: inherit;
+    cursor: pointer;
+}
+
+.dossier-delete:hover {
+    background: #ffe0e0;
+}
+
+.dossier-delete:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.dossier-delete[hidden] {
+    display: none !important;
+}
