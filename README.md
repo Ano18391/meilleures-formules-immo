@@ -1,1 +1,1 @@
-# meilleures-formules-immo
+postgresql://neondb_owner:npg_YAUO3lu8gbDz@ep-muddy-resonance-b4xgru5m-pooler.c-6.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require

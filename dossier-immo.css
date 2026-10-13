@@ -197,3 +197,369 @@
 .dossier-delete[hidden] {
     display: none !important;
 }
+
+/* ==========================================
+   DOSSIER IMMO PRO — VUE PROFESSIONNELLE
+   ========================================== */
+
+.dossier-view[hidden],
+#dossier-editor[hidden] {
+    display: none !important;
+}
+
+.dossier-view {
+    padding: clamp(18px, 3vw, 32px);
+    border: 1px solid var(--border-color, #dce7df);
+    border-radius: 22px;
+    background: var(--card-background, #fff);
+    box-shadow: 0 12px 35px rgba(30, 60, 42, 0.06);
+}
+
+.dossier-view-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border-color, #dce7df);
+}
+
+.dossier-view-eyebrow {
+    margin: 0 0 8px;
+    color: #48785a;
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: .13em;
+}
+
+.dossier-view-header h3 {
+    margin: 0 0 8px;
+    font-size: clamp(1.45rem, 3vw, 2rem);
+    letter-spacing: -.035em;
+    overflow-wrap: anywhere;
+}
+
+.dossier-view-header > div > p:last-child {
+    margin: 0;
+    color: var(--muted-color, #64746a);
+    overflow-wrap: anywhere;
+}
+
+.dossier-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 1px solid #d5e8da;
+    border-radius: 999px;
+    background: #eff8f1;
+    color: #27633b;
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+.dossier-view-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.dossier-view-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 24px 0 30px;
+}
+
+.dossier-view-metric {
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid var(--border-color, #dce7df);
+    border-radius: 16px;
+    background: var(--panel-background, #f8faf8);
+}
+
+.dossier-view-metric:first-child,
+.dossier-view-metric:nth-child(2) {
+    background: #eff6f0;
+    border-color: #dceade;
+}
+
+.dossier-view-metric span {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--muted-color, #64746a);
+    font-size: .84rem;
+    line-height: 1.5;
+}
+
+.dossier-view-metric strong {
+    display: block;
+    font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+    line-height: 1.25;
+    letter-spacing: -.025em;
+    overflow-wrap: anywhere;
+}
+
+.dossier-view-metric strong.positive {
+    color: #21824a;
+}
+
+.dossier-view-metric strong.negative {
+    color: #bf3d3d;
+}
+
+.dossier-view-sections {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.dossier-view-section {
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid var(--border-color, #dce7df);
+    border-radius: 16px;
+    background: var(--card-background, #fff);
+}
+
+.dossier-view-section h4 {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin: 0 0 12px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border-color, #dce7df);
+    font-size: 1rem;
+}
+
+.dossier-view-section h4 span {
+    display: inline-grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+    border-radius: 9px;
+    background: #eaf2ec;
+    color: #326343;
+    font-size: .75rem;
+}
+
+.dossier-view-section dl {
+    margin: 0;
+}
+
+.dossier-view-section dl > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color, #edf0ed);
+}
+
+.dossier-view-section dl > div:last-child {
+    border-bottom: 0;
+}
+
+.dossier-view-section dt {
+    color: var(--muted-color, #64746a);
+    font-size: .88rem;
+    line-height: 1.5;
+}
+
+.dossier-view-section dd {
+    margin: 0;
+    font-size: .9rem;
+    font-weight: 700;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.dossier-view-note {
+    margin: 24px 0 0;
+    padding: 15px 17px;
+    border-radius: 12px;
+    background: var(--panel-background, #f8faf8);
+    color: var(--muted-color, #64746a);
+    font-size: .84rem;
+    line-height: 1.7;
+}
+
+#dossier-editor {
+    margin-top: 20px;
+}
+
+#dossier-editor > h3 {
+    margin-top: 0;
+}
+
+#dossier-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+#dossier-list .dossier-list-item {
+    min-height: 100px;
+    align-content: center;
+    padding: 18px;
+    transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+
+#dossier-list .dossier-list-item:hover {
+    border-color: #78a486;
+    box-shadow: 0 6px 18px rgba(30, 60, 42, .07);
+    transform: translateY(-1px);
+}
+
+#dossier-list .dossier-list-item strong {
+    font-size: 1rem;
+    overflow-wrap: anywhere;
+}
+
+#dossier-list .dossier-list-item span {
+    line-height: 1.5;
+}
+
+.dossier-delete {
+    transition: background .18s ease, border-color .18s ease;
+}
+
+@media (max-width: 850px) {
+    .dossier-view-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dossier-view-sections {
+        grid-template-columns: 1fr;
+    }
+
+    #dossier-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .dossier-view {
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .dossier-view-metrics {
+        gap: 9px;
+    }
+
+    .dossier-view-metric {
+        padding: 14px;
+    }
+
+    .dossier-view-metric span {
+        font-size: .78rem;
+    }
+
+    .dossier-view-section {
+        padding: 15px;
+    }
+
+    .dossier-view-section dl > div {
+        gap: 10px;
+    }
+
+    .dossier-view-section dt,
+    .dossier-view-section dd {
+        font-size: .82rem;
+    }
+}
+
+
+
+/* ==========================================
+   EXPORT PDF — DOSSIER IMMOBILIER
+   ========================================== */
+@media print {
+    @page {
+        size: A4;
+        margin: 14mm;
+    }
+
+    body {
+        background: #fff !important;
+        color: #18231c !important;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    body * {
+        visibility: hidden !important;
+    }
+
+    #dossier-view,
+    #dossier-view * {
+        visibility: visible !important;
+    }
+
+    #dossier-view {
+        display: block !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: #fff !important;
+        color: #18231c !important;
+        font-size: 10pt !important;
+    }
+
+    #dossier-view .dossier-view-actions {
+        display: none !important;
+    }
+
+    #dossier-view .dossier-view-header {
+        padding-bottom: 12px !important;
+        margin-bottom: 16px !important;
+    }
+
+    #dossier-view .dossier-view-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        margin: 14px 0 18px !important;
+    }
+
+    #dossier-view .dossier-view-metric,
+    #dossier-view .dossier-view-section {
+        break-inside: avoid;
+        box-shadow: none !important;
+        background: #fff !important;
+        border: 1px solid #dce7df !important;
+    }
+
+    #dossier-view .dossier-view-sections {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+    }
+
+    #dossier-view .dossier-view-section {
+        padding: 12px !important;
+    }
+
+    #dossier-view .dossier-view-metric {
+        padding: 12px !important;
+    }
+
+    #dossier-view .dossier-view-note {
+        break-inside: avoid;
+        background: #f5f8f5 !important;
+    }
+
+    #dossier-view .dossier-status {
+        background: #eff8f1 !important;
+    }
+}

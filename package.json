@@ -1,0 +1,26 @@
+{
+  "name": "meilleures-formules-immo",
+  "version": "1.0.0",
+  "description": "postgresql://neondb_owner:npg_YAUO3lu8gbDz@ep-muddy-resonance-b4xgru5m-pooler.c-6.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite --host 0.0.0.0 --port 8000",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ano18391/meilleures-formules-immo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ano18391/meilleures-formules-immo/issues"
+  },
+  "homepage": "https://github.com/Ano18391/meilleures-formules-immo#readme",
+  "devDependencies": {
+    "vite": "^8.3.4"
+  }
+}

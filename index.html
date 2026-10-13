@@ -1,343 +1,560 @@
+
 <!DOCTYPE html>
-<html lang="fr">
-
+<html lang="en" data-theme="dark">
 <head>
-
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg?v=1">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff1f5">
+    <meta name="description" content="Property Formulas offers practical real estate calculators to estimate rental yield, cash flow, borrowing capacity and more.">
+    <title>Property Formulas — Real Estate Calculators</title>
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <meta
-        name="description"
-        content="Meilleures Formules Immo — calculateurs immobiliers gratuits pour analyser rentabilité, cashflow, endettement et capacité d'emprunt."
-    >
+    <link rel="stylesheet" href="./style.css?v=6">
+    <script src="./script.js?v=6" defer></script>
 
-    <meta
-        name="theme-color"
-        content="#e93682"
-    >
+    <link rel="stylesheet" href="./password-toggle.css">
+    <script src="./password-toggle.js" defer></script>
 
-    <title>
-        Meilleures Formules Immo 🌸
-    </title>
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
+    <link rel="stylesheet" href="./dossier-immo.css">
+    <script src="./dossier-immo.js" defer></script>
+    <link rel="stylesheet" href="./premium-overhaul.css?v=2">
+    <script src="./premium-navigation.js?v=2" defer></script>
+    <link rel="stylesheet" href="./investment-score.css?v=1">
+    <link rel="stylesheet" href="./property-extras.css?v=1">
+    <script src="./property-extras.js?v=1" defer></script>
+    <link rel="stylesheet" href="./site-brand-guide.css?v=1">
+    <script src="./site-brand-guide.js?v=3" defer></script>
 </head>
 
-
 <body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <a href="#home" class="brand">
+                <span class="brand-icon" aria-hidden="true">⌂</span>
+                <span class="brand-text">
+                    <strong>Property</strong>
+                    <span>FORMULAS</span>
+                </span>
+            </a>
 
+            <div class="sidebar-label">REAL ESTATE WORKSPACE</div>
 
-    <!-- =========================
-         HERO
-    ========================== -->
+            <nav class="sidebar-nav" aria-label="Main navigation">
+                <a class="nav-link active" href="#home" data-page="dashboard">
+                    <span class="nav-icon" aria-hidden="true">⌂</span>
+                    <span>Home</span>
+                </a>
+                <a class="nav-link" href="#tools" data-page="calculators">
+                    <span class="nav-icon" aria-hidden="true">▦</span>
+                    <span>Calculators</span>
+                </a>
+                <a class="nav-link" href="#guide" data-page="guide">
+                    <span class="nav-icon" aria-hidden="true">◇</span>
+                    <span>Investment guide</span>
+                </a>
+                <a class="nav-link" href="#dossier-immo" data-page="properties">
+                    <span class="nav-icon" aria-hidden="true">⌂</span>
+                    <span>Property Workspace</span>
+                </a>
+            </nav>
 
-    <header class="hero">
+            <div class="sidebar-bottom">
+                <div class="sidebar-tip">
+                    <span class="tip-icon" aria-hidden="true">✦</span>
+                    <strong>Invest with confidence</strong>
+                    <p>Understand the numbers before making a property decision.</p>
+                    <a href="#tools">Explore the tools →</a>
+                </div>
 
-        <div class="hero-content">
-
-            <div class="badge">
-                🌸 OUTILS IMMOBILIERS
+                <div class="sidebar-footer">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    <span>Your real estate workspace</span>
+                </div>
             </div>
+        </aside>
 
-            <h1>
-                Meilleures
-                <span>Formules Immo</span>
-            </h1>
-
-            <p>
-                Les calculs essentiels pour analyser
-                rapidement tes investissements immobiliers.
-                Simples, rapides et gratuits.
-            </p>
-
-        </div>
-
-    </header>
-
-
-    <!-- =========================
-         CONTENU
-    ========================== -->
-
-    <main class="container">
-
-        <div class="intro">
-
-            <h2>
-                Choisis ton calculateur
-            </h2>
-
-            <p>
-                Sélectionne un outil pour commencer ton analyse.
-            </p>
-
-        </div>
-
-
-        <!-- =========================
-             CARTES
-        ========================== -->
-
-        <section class="calculators">
-
-
-            <article
-                class="card"
-                onclick="showCalculator('brute')"
-            >
-
-                <div class="icon pink">
-                    🏠
+        <main class="main-content" id="home">
+            <header class="topbar">
+                <div class="breadcrumb">
+                    <span>Workspace</span>
+                    <span class="breadcrumb-separator">/</span>
+                    <strong>Dashboard</strong>
                 </div>
 
-                <div>
+                <div class="topbar-right">
+                    <label class="theme-label" for="theme-select">Appearance</label>
+                    <select id="theme-select" aria-label="Choose appearance">
+                        <option value="dark">Forest Dark</option>
+                        <option value="light">Light</option>
+                        <option value="night">Midnight</option>
+                        <option value="cosy">Cosy</option>
+                        <option value="sakura">Sakura</option>
+                    </select>
+                    <button type="button" class="account-button" id="account-open">
+                        <span aria-hidden="true">♙</span> Account
+                    </button>
+                </div>
+            </header>
 
-                    <h3>
-                        Rentabilité brute
-                    </h3>
 
-                    <p>
-                        Évalue rapidement le rendement locatif
-                        de ton investissement.
+            <section id="account-section" class="account-section" hidden>
+                <div class="account-panel">
+                    <div class="account-panel-heading">
+                        <div>
+                            <p class="eyebrow">YOUR PERSONAL SPACE</p>
+                            <h2 id="account-title">Your account</h2>
+                            <p class="section-description">Create an account or sign in to manage your access.</p>
+                        </div>
+                        <button type="button" class="account-close" id="account-close" aria-label="Close account panel">×</button>
+                    </div>
+
+                    <div id="account-message" class="account-message" role="status" aria-live="polite" hidden></div>
+
+                    <div id="account-logged-out">
+                        <div class="account-tabs">
+                            <button type="button" class="account-tab active" data-auth-view="login">Sign in</button>
+                            <button type="button" class="account-tab" data-auth-view="register">Create account</button>
+                            <button type="button" class="account-tab" data-auth-view="forgot">Forgot password?</button>
+                        </div>
+
+                        <form id="login-form" class="account-form">
+                            <label for="login-username">Username</label>
+                            <input id="login-username" name="username" minlength="3" maxlength="24" autocomplete="username" required>
+                            <label for="login-password">Password</label>
+                            <input id="login-password" name="password" type="password" maxlength="128" autocomplete="current-password" required>
+                            <button class="primary-button" type="submit">Sign in</button>
+                        </form>
+
+                        <form id="register-form" class="account-form" hidden>
+                            <label for="register-username">Username</label>
+                            <input id="register-username" name="username" minlength="3" maxlength="24" autocomplete="username" pattern="[A-Za-z0-9_.-]{3,24}" required>
+                            <small>3–24 letters, numbers, dots, underscores or hyphens. Uppercase and lowercase are distinct.</small>
+                            <label for="register-password">Password</label>
+                            <input id="register-password" name="password" type="password" minlength="10" maxlength="128" autocomplete="new-password" required>
+                            <small>Use between 10 and 128 characters.</small>
+                            <label for="register-confirm">Confirm password</label>
+                            <input id="register-confirm" name="confirmPassword" type="password" minlength="10" maxlength="128" autocomplete="new-password" required>
+                            <button class="primary-button" type="submit">Create account</button>
+                        </form>
+
+                        <form id="forgot-form" class="account-form" hidden>
+                            <label for="forgot-username">Username</label>
+                            <input id="forgot-username" name="username" minlength="3" maxlength="24" autocomplete="username" required>
+                            <label for="forgot-code">Recovery code</label>
+                            <input id="forgot-code" name="recoveryCode" maxlength="100" autocomplete="off" required>
+                            <button class="primary-button" type="submit">Verify recovery code</button>
+                        </form>
+
+                        <form id="reset-form" class="account-form" hidden>
+                            <p class="account-help">Recovery verified. Choose a new password.</p>
+                            <label for="reset-password">New password</label>
+                            <input id="reset-password" name="newPassword" type="password" minlength="10" maxlength="128" autocomplete="new-password" required>
+                            <label for="reset-confirm">Confirm new password</label>
+                            <input id="reset-confirm" name="confirmPassword" type="password" minlength="10" maxlength="128" autocomplete="new-password" required>
+                            <button class="primary-button" type="submit">Reset password</button>
+                        </form>
+
+                        <div id="recovery-display" class="recovery-display" hidden>
+                            <h3>Save your recovery code</h3>
+                            <p>Keep this code somewhere private and safe. It is needed if you forget your password. You will not be able to retrieve this exact code later.</p>
+                            <code id="recovery-code-value"></code>
+                            <button type="button" class="secondary-button" id="copy-recovery-code">Copy recovery code</button>
+                            <button type="button" class="primary-button" id="recovery-continue">I have saved my code</button>
+                        </div>
+                    </div>
+
+                    <div id="account-logged-in" hidden>
+                        <p class="account-help">You are signed in as:</p>
+                        <h3 id="account-username"></h3>
+                        <p class="account-help">Your account session is managed securely by the Property Formulas API.</p>
+                        <button type="button" class="secondary-button" id="account-logout">Sign out</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="welcome-section">
+                <div class="welcome-content">
+                    <p class="eyebrow">YOUR REAL ESTATE DASHBOARD</p>
+                    <h1>Make your property plans<br><span>clearer with numbers.</span></h1>
+                    <p class="welcome-description">
+                        Analyse investments, estimate rental returns and explore
+                        your financing options with simple, practical tools.
                     </p>
-
+                    <a class="primary-button welcome-button" href="#tools">
+                        Explore calculators <span aria-hidden="true">→</span>
+                    </a>
                 </div>
 
-                <span class="arrow">
-                    →
-                </span>
-
-            </article>
-
-
-            <article
-                class="card"
-                onclick="showCalculator('nette')"
-            >
-
-                <div class="icon purple">
-                    📈
+                <div class="welcome-decoration" aria-hidden="true">
+                    <div class="decoration-circle circle-one"></div>
+                    <div class="decoration-circle circle-two"></div>
+                    <div class="decoration-house">
+                        <span class="house-roof"></span>
+                        <span class="house-body">
+                            <span class="house-window"></span>
+                            <span class="house-door"></span>
+                        </span>
+                    </div>
+                    <div class="decoration-caption">BUILD YOUR FUTURE</div>
                 </div>
+            </section>
 
+            <section class="intro-section">
                 <div>
-
-                    <h3>
-                        Rentabilité nette
-                    </h3>
-
-                    <p>
-                        Prends en compte les charges,
-                        taxes et frais de gestion.
+                    <p class="eyebrow">YOUR TOOLKIT</p>
+                    <h2>Everything you need for property calculations</h2>
+                    <p class="section-description">
+                        Choose a calculator to start exploring your investment.
                     </p>
+                </div>
+                <span class="tool-count">7 calculators available</span>
+            </section>
 
+            <section class="tools-section" id="tools">
+                <div class="section-heading">
+                    <div>
+                        <h2>Real estate calculators</h2>
+                        <p>Useful estimates to help you evaluate your numbers.</p>
+                    </div>
                 </div>
 
-                <span class="arrow">
-                    →
-                </span>
+                <div class="tools-grid">
+                    <article class="tool-card">
+                        <div class="tool-card-top">
+                            <span class="tool-icon icon-green" aria-hidden="true">%</span>
+                            <span class="tool-category">RENTAL YIELD</span>
+                        </div>
+                        <h3>Gross Rental Yield</h3>
+                        <p>Calculate your property's annual rental return before expenses.</p>
+                        <button type="button" class="tool-button" data-open="brute">
+                            Calculate gross yield <span aria-hidden="true">→</span>
+                        </button>
+                    </article>
 
-            </article>
+                    <article class="tool-card">
+                        <div class="tool-card-top">
+                            <span class="tool-icon icon-blue" aria-hidden="true">↗</span>
+                            <span class="tool-category">RENTAL YIELD</span>
+                        </div>
+                        <h3>Net Rental Yield</h3>
+                        <p>Include your main annual expenses for a more realistic estimate.</p>
+                        <button type="button" class="tool-button" data-open="nette">
+                            Calculate net yield <span aria-hidden="true">→</span>
+                        </button>
+                    </article>
 
+                    <article class="tool-card">
+                        <div class="tool-card-top">
+                            <span class="tool-icon icon-orange" aria-hidden="true">€</span>
+                            <span class="tool-category">Cash Flow</span>
+                        </div>
+                        <h3>Monthly Cash Flow</h3>
+                        <p>Estimate what remains each month after your main expenses.</p>
+                        <button type="button" class="tool-button" data-open="cashflow">
+                            Calculate cash flow <span aria-hidden="true">→</span>
+                        </button>
+                    </article>
 
-            <article
-                class="card"
-                onclick="showCalculator('cashflow')"
-            >
+                    <article class="tool-card">
+                        <div class="tool-card-top">
+                            <span class="tool-icon icon-purple" aria-hidden="true">70</span>
+                            <span class="tool-category">INVESTMENT STRATEGY</span>
+                        </div>
+                        <h3>70% Rule</h3>
+                        <p>Compare your loan payment with an indicative rent-based threshold.</p>
+                        <button type="button" class="tool-button" data-open="regle70">
+                            Test the 70% rule <span aria-hidden="true">→</span>
+                        </button>
+                    </article>
 
-                <div class="icon green">
-                    💰
+                    <article class="tool-card">
+                        <div class="tool-card-top">
+                            <span class="tool-icon icon-red" aria-hidden="true">▤</span>
+                            <span class="tool-category">FINANCING</span>
+                        </div>
+                        <h3>Debt-to-Income Ratio</h3>
+                        <p>Measure how much of your monthly income goes towards debt payments.</p>
+                        <button type="button" class="tool-button" data-open="endettement">
+                            Calculate my ratio <span aria-hidden="true">→</span>
+                        </button>
+                    </article>
+
+                    <article class="tool-card">
+                        <div class="tool-card-top">
+                            <span class="tool-icon icon-teal" aria-hidden="true">↔</span>
+                            <span class="tool-category">BORROWING BUDGET</span>
+                        </div>
+                        <h3>Affordable Monthly Payment</h3>
+                        <p>Estimate a theoretical monthly payment based on your income.</p>
+                        <button type="button" class="tool-button" data-open="mensualite">
+                            Estimate my payment <span aria-hidden="true">→</span>
+                        </button>
+                    </article>
+
+                    <article class="tool-card">
+                        <div class="tool-card-top">
+                            <span class="tool-icon icon-gold" aria-hidden="true">⌂</span>
+                            <span class="tool-category">LOAN ESTIMATE</span>
+                        </div>
+                        <h3>Borrowing Capacity</h3>
+                        <p>Estimate a theoretical loan amount based on the rate and term.</p>
+                        <button type="button" class="tool-button" data-open="capital">
+                            Estimate my loan <span aria-hidden="true">→</span>
+                        </button>
+                    </article>
+                </div>
+            </section>
+
+            <section id="dossier-immo" class="dossier-section">
+                <div class="dossier-heading">
+                    <div>
+                        <p class="eyebrow">PROPERTY WORKSPACE</p>
+                        <h2>Dossier Immo Pro</h2>
+                        <p>Centralisez les chiffres de chaque bien et estimez sa rentabilité.</p>
+                    </div>
                 </div>
 
-                <div>
+                <div id="dossier-message" class="dossier-message" role="status" aria-live="polite" hidden></div>
 
-                    <h3>
-                        Cashflow
-                    </h3>
-
-                    <p>
-                        Découvre ce que ton investissement
-                        te rapporte chaque mois.
-                    </p>
-
+                <div id="dossier-locked" class="dossier-locked">
+                    <h3>Votre espace immobilier</h3>
+                    <p>Connectez-vous pour créer des dossiers privés et les retrouver lors de votre prochaine visite.</p>
+                    <button type="button" class="primary-button" id="dossier-login">Ouvrir mon compte</button>
                 </div>
 
-                <span class="arrow">
-                    →
-                </span>
+                <div id="dossier-workspace" hidden>
+                    <div class="dossier-layout">
+                        <div id="dossier-view" class="dossier-view" hidden>
+                            <div class="dossier-view-header">
+                                <div>
+                                    <p class="dossier-view-eyebrow">REAL ESTATE ANALYSIS</p>
+                                    <h3 id="dossier-view-title">My property details</h3>
+                                    <p id="dossier-view-address">No address provided</p>
+                                </div>
+                                <span id="dossier-view-status" class="dossier-status">Saved property</span>
+                            </div>
 
-            </article>
+                            <div class="dossier-view-actions">
+                                <button type="button" class="primary-button" id="dossier-edit">Edit Analysis</button>
+                <button type="button" class="primary-button dossier-export-pdf" id="dossier-export-pdf">Download PDF Report</button>
+                                <button type="button" class="dossier-secondary" id="dossier-view-new">New Analysis</button>
+                            </div>
 
+                            <div class="dossier-view-metrics">
+                                <article class="dossier-view-metric">
+                                    <span>Purchase Price</span>
+                                    <strong id="view-purchase-price">—</strong>
+                                </article>
+                                <article class="dossier-view-metric">
+                                    <span>Total project cost</span>
+                                    <strong id="view-investment">—</strong>
+                                </article>
+                                <article class="dossier-view-metric">
+                                    <span>Gross annual yield</span>
+                                    <strong id="view-gross">—</strong>
+                                </article>
+                                <article class="dossier-view-metric">
+                                    <span>Estimated net yield</span>
+                                    <strong id="view-net">—</strong>
+                                </article>
+                                <article class="dossier-view-metric">
+                                    <span>Estimated monthly payment</span>
+                                    <strong id="view-payment">—</strong>
+                                </article>
+                                <article class="dossier-view-metric">
+                                    <span>Monthly Cash Flow</span>
+                                    <strong id="view-cashflow">—</strong>
+                                </article>
+                            </div>
 
-            <article
-                class="card"
-                onclick="showCalculator('regle70')"
-            >
+                            <div class="dossier-view-sections">
+                                <section class="dossier-view-section">
+                                    <h4><span>01</span> Acquisition</h4>
+                                    <dl>
+                                        <div><dt>Purchase Price</dt><dd id="view-detail-price">—</dd></div>
+                                        <div><dt>Closing Costs</dt><dd id="view-fees">—</dd></div>
+                                        <div><dt>Renovation</dt><dd id="view-works">—</dd></div>
+                                        <div><dt>Total budget</dt><dd id="view-total">—</dd></div>
+                                    </dl>
+                                </section>
+                                <section class="dossier-view-section">
+                                    <h4><span>02</span> Income and expenses</h4>
+                                    <dl>
+                                        <div><dt>Monthly rent before expenses</dt><dd id="view-rent">—</dd></div>
+                                        <div><dt>Monthly expenses</dt><dd id="view-charges">—</dd></div>
+                                        <div><dt>Estimated monthly taxes</dt><dd id="view-tax">—</dd></div>
+                                        <div><dt>Income before loan payment</dt><dd id="view-income">—</dd></div>
+                                    </dl>
+                                </section>
+                                <section class="dossier-view-section">
+                                    <h4><span>03</span> Financing</h4>
+                                    <dl>
+                                        <div><dt>Mortgage Amount</dt><dd id="view-loan">—</dd></div>
+                                        <div><dt>Annual interest rate</dt><dd id="view-rate">—</dd></div>
+                                        <div><dt>Mortgage Term</dt><dd id="view-years">—</dd></div>
+                                    </dl>
+                                </section>
+                            </div>
 
-                <div class="icon orange">
-                    🔥
+                            <p class="dossier-view-note">Indicative estimates based on the saved information. Insurance, vacancy periods, management fees and tax rules may affect actual returns.</p>
+
+                            <div class="dossier-view-actions">
+                                <button type="button" class="dossier-delete" id="dossier-view-delete">Delete Analysis</button>
+                            </div>
+                        </div>
+
+                        <div class="dossier-panel" id="dossier-editor">
+                            <h3 id="dossier-editor-heading">New Property immobilière</h3>
+                            <form id="dossier-form">
+                                <div class="dossier-fields">
+                                    <div class="dossier-field full">
+                                        <label for="dossier-title">Nom du dossier *</label>
+                                        <input id="dossier-title" maxlength="120" placeholder="Ex. Appartement à Lyon" required>
+                                    </div>
+                                    <div class="dossier-field full">
+                                        <label for="property-address">Adresse ou description du bien</label>
+                                        <input id="property-address" maxlength="250" placeholder="Ville, quartier, type de bien">
+                                    </div>
+                                    <div class="dossier-field">
+                                        <label for="purchase-price">Prix d’achat (€) *</label>
+                                        <input id="purchase-price" type="number" min="0" step="0.01" value="150000" required>
+                                    </div>
+                                    <div class="dossier-field">
+                                        <label for="acquisition-fees">Frais d’acquisition (€)</label>
+                                        <input id="acquisition-fees" type="number" min="0" step="0.01" value="12000" required>
+                                    </div>
+                                    <div class="dossier-field">
+                                        <label for="renovation-cost">Renovation (€)</label>
+                                        <input id="renovation-cost" type="number" min="0" step="0.01" value="5000" required>
+                                    </div>
+                                    <div class="dossier-field">
+                                        <label for="monthly-rent">Monthly rent before expenses (€)</label>
+                                        <input id="monthly-rent" type="number" min="0" step="0.01" value="850" required>
+                                    </div>
+                                    <div class="dossier-field">
+                                        <label for="monthly-charges">Monthly expenses estimées (€)</label>
+                                        <input id="monthly-charges" type="number" min="0" step="0.01" value="100" required>
+                                    </div>
+                                    <div class="dossier-field">
+                                        <label for="monthly-tax">Estimated monthly taxes (€)</label>
+                                        <input id="monthly-tax" type="number" min="0" step="0.01" value="70" required>
+                                    </div>
+                                    <div class="dossier-field">
+                                        <label for="loan-amount">Loan amount (€)</label>
+                                        <input id="loan-amount" type="number" min="0" step="0.01" value="150000" required>
+                                    </div>
+                                    <div class="dossier-field">
+                                        <label for="interest-rate">Annual interest rate du crédit (%)</label>
+                                        <input id="interest-rate" type="number" min="0" max="100" step="0.01" value="3.5" required>
+                                    </div>
+                                    <div class="dossier-field">
+                                        <label for="loan-years">Loan term (années)</label>
+                                        <input id="loan-years" type="number" min="0" max="50" step="1" value="20" required>
+                                    </div>
+                                </div>
+                                <div class="dossier-actions">
+                                    <button type="submit" class="primary-button" id="dossier-save">Enregistrer le dossier</button>
+                                    <button type="button" class="dossier-secondary" id="dossier-new">New Analysis</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <aside class="dossier-panel">
+                            <h3>Estimation du projet</h3>
+                            <div class="dossier-results">
+                                <div class="dossier-result">
+                                    <span>Total project cost</span>
+                                    <strong id="dossier-investment">—</strong>
+                                </div>
+                                <div class="dossier-result">
+                                    <span>Gross annual yield</span>
+                                    <strong id="dossier-gross">—</strong>
+                                </div>
+                                <div class="dossier-result">
+                                    <span>Estimated net yield avant financement</span>
+                                    <strong id="dossier-net">—</strong>
+                                </div>
+                                <div class="dossier-result">
+                                    <span>Estimated monthly payment du crédit</span>
+                                    <strong id="dossier-payment">—</strong>
+                                </div>
+                                <div class="dossier-result">
+                                    <span>Monthly cash flow estimé</span>
+                                    <strong id="dossier-cashflow">—</strong>
+                                </div>
+                            </div>
+                            <p class="dossier-empty">Estimations indicatives. Les vacances locatives, assurances, frais de gestion, fiscalité réelle et autres dépenses peuvent modifier le résultat.</p>
+                        </aside>
+                    </div>
+
+                    <div class="dossier-panel" style="margin-top:24px">
+                        <div class="dossier-heading">
+                            <div>
+                                <h3>Mes dossiers enregistrés</h3>
+                                <p>Sélectionnez un dossier pour le modifier.</p>
+                            </div>
+                            <button type="button" class="dossier-secondary" id="dossier-refresh">Actualiser</button>
+                        </div>
+                        <div id="dossier-list" class="dossier-list"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="calculator-section" class="calculator-section" hidden>
+                <div id="calculator"></div>
+            </section>
+
+            <section class="guide-section" id="guide">
+                <div class="guide-heading">
+                    <p class="eyebrow">GETTING STARTED</p>
+                    <h2>How should you use your results?</h2>
+                    <p>A calculation is a starting point, not a guarantee of profitability.</p>
                 </div>
 
-                <div>
+                <div class="guide-grid">
+                    <article class="guide-card">
+                        <span class="guide-number">01</span>
+                        <h3>Enter your figures</h3>
+                        <p>Use realistic amounts and check for any expenses you may have missed.</p>
+                    </article>
 
-                    <h3>
-                        Règle des 70
-                    </h3>
+                    <article class="guide-card">
+                        <span class="guide-number">02</span>
+                        <h3>Compare scenarios</h3>
+                        <p>Test different rents, purchase prices, interest rates and loan terms.</p>
+                    </article>
 
-                    <p>
-                        Vérifie rapidement si ta mensualité
-                        reste cohérente avec tes loyers.
-                    </p>
-
+                    <article class="guide-card">
+                        <span class="guide-number">03</span>
+                        <h3>Verify before deciding</h3>
+                        <p>Consider taxes, fees, vacancies, maintenance and unexpected costs.</p>
+                    </article>
                 </div>
+            </section>
 
-                <span class="arrow">
-                    →
-                </span>
+            <footer class="site-footer">
+                <a href="#home" class="footer-brand">Property Formulas</a>
+                <p>Practical tools to help you understand real estate investments.</p>
+                <p class="footer-disclaimer">
+                    Results are estimates only and do not constitute personalised
+                    financial advice or a loan offer. Rules and taxes vary by country.
+                </p>
+                <span class="copyright">© <span id="current-year">2026</span> Property Formulas</span>
+            </footer>
+        </main>
+    </div>
 
-            </article>
-
-
-            <article
-                class="card"
-                onclick="showCalculator('endettement')"
-            >
-
-                <div class="icon blue">
-                    📊
-                </div>
-
-                <div>
-
-                    <h3>
-                        Taux d'endettement
-                    </h3>
-
-                    <p>
-                        Calcule le poids de tes crédits
-                        par rapport à tes revenus.
-                    </p>
-
-                </div>
-
-                <span class="arrow">
-                    →
-                </span>
-
-            </article>
-
-
-            <article
-                class="card"
-                onclick="showCalculator('mensualite')"
-            >
-
-                <div class="icon cyan">
-                    💳
-                </div>
-
-                <div>
-
-                    <h3>
-                        Mensualité maximale
-                    </h3>
-
-                    <p>
-                        Estime ta capacité mensuelle
-                        de remboursement.
-                    </p>
-
-                </div>
-
-                <span class="arrow">
-                    →
-                </span>
-
-            </article>
-
-
-            <article
-                class="card"
-                onclick="showCalculator('capital')"
-            >
-
-                <div class="icon gold">
-                    👏
-                </div>
-
-                <div>
-
-                    <h3>
-                        Capital maximal
-                    </h3>
-
-                    <p>
-                        Estime le montant maximal
-                        que tu pourrais emprunter.
-                    </p>
-
-                </div>
-
-                <span class="arrow">
-                    →
-                </span>
-
-            </article>
-
-
-        </section>
-
-
-        <!-- =========================
-             CALCULATEUR
-        ========================== -->
-
-        <section
-            id="calculator-section"
-            class="calculator-section hidden"
-        >
-
-            <button
-                class="back-button"
-                onclick="closeCalculator()"
-            >
-                ← Retour aux calculateurs
-            </button>
-
-            <div id="calculator"></div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer>
-
-        <p>
-            Meilleures Formules Immo 🌸
-        </p>
-
-        <small>
-            Des outils simples pour mieux comprendre
-            tes projets immobiliers.
-        </small>
-
-    </footer>
-
-
-    <script src="script.js"></script>
-
+    <script>
+        const yearElement = document.getElementById("current-year");
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
+        }
+    </script>
+    <script src="./investment-score.js?v=1" defer></script>
+<script src="./remove-foxes.js?v=20261013fix" defer></script>
 </body>
-
 </html>

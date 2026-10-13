@@ -1,0 +1,150 @@
+/* Property Formulas — premium investment guide and fox identity */
+.pf-fox-icon {
+    display: inline-flex;
+    flex: 0 0 auto;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.pf-fox-mark { display: block; width: 100%; height: 100%; filter: drop-shadow(0 3px 5px #0002); }
+.pf-brand-upgraded { align-items: center; }
+.pfg-page {
+    --pfg-ink: var(--text, #20352a);
+    --pfg-muted: var(--text-soft, #68776d);
+    --pfg-line: var(--border, #dce7de);
+    --pfg-card: var(--surface, #fff);
+    --pfg-soft: var(--surface-soft, #f3f7f3);
+    --pfg-green: var(--primary, #28764d);
+    color: var(--pfg-ink);
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: clamp(14px, 3vw, 34px);
+}
+.pfg-hero {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(28px, 5vw, 66px);
+    border: 1px solid var(--pfg-line);
+    border-radius: 26px;
+    background:
+      radial-gradient(ellipse at 90% 8%, rgba(94,177,117,.18), transparent 36%),
+      linear-gradient(135deg, var(--pfg-card), var(--pfg-soft));
+}
+.pfg-eyebrow, .pfg-label {
+    color: var(--pfg-green);
+    font-size: .7rem;
+    font-weight: 850;
+    letter-spacing: .15em;
+}
+.pfg-eyebrow { display: flex; align-items: center; gap: 10px; }
+.pfg-eyebrow span { width: 8px; height: 8px; border-radius: 50%; background: #54bd7a; box-shadow: 0 0 0 5px #54bd7a1b; }
+.pfg-hero h1 { max-width: 850px; margin: 22px 0 14px; font-size: clamp(2.2rem, 6vw, 5rem); line-height: 1.02; letter-spacing: -.065em; }
+.pfg-hero h1 em { color: var(--pfg-green); font-style: normal; }
+.pfg-intro { max-width: 700px; color: var(--pfg-muted); font-size: clamp(.95rem, 1.5vw, 1.1rem); line-height: 1.85; }
+.pfg-hero-stats { display: flex; flex-wrap: wrap; gap: 32px; margin: 34px 0; }
+.pfg-hero-stats div { display: grid; gap: 5px; }
+.pfg-hero-stats strong { font-size: 1.05rem; letter-spacing: .02em; }
+.pfg-hero-stats span { color: var(--pfg-muted); font-size: .75rem; }
+.pfg-cta { display: inline-flex; align-items: center; gap: 16px; padding: 13px 18px; border-radius: 10px; background: var(--pfg-green); color: white !important; text-decoration: none; font-weight: 800; font-size: .85rem; }
+.pfg-layout { display: grid; grid-template-columns: 230px minmax(0, 1fr); align-items: start; gap: 28px; margin-top: 28px; }
+.pfg-toc { position: sticky; top: 20px; display: grid; gap: 5px; padding: 18px 12px; border: 1px solid var(--pfg-line); border-radius: 16px; background: var(--pfg-card); }
+.pfg-toc p { padding: 0 10px; color: var(--pfg-muted); font-size: .65rem; font-weight: 850; letter-spacing: .14em; }
+.pfg-toc a { padding: 9px 10px; border-radius: 8px; color: var(--pfg-muted); text-decoration: none; font-size: .76rem; line-height: 1.4; }
+.pfg-toc a:hover { background: var(--pfg-soft); color: var(--pfg-green); }
+.pfg-content { min-width: 0; }
+.pfg-callout, .pfg-step, .pfg-checklist { margin-bottom: 18px; padding: clamp(20px, 3vw, 32px); border: 1px solid var(--pfg-line); border-radius: 18px; background: var(--pfg-card); }
+.pfg-callout { border-left: 4px solid var(--pfg-green); }
+.pfg-callout strong { font-size: 1rem; }
+.pfg-callout p, .pfg-step p:not(.pfg-label), .pfg-checklist > p:not(.pfg-label) { color: var(--pfg-muted); line-height: 1.8; font-size: .88rem; }
+.pfg-step { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 18px; scroll-margin-top: 20px; }
+.pfg-number { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--pfg-line); border-radius: 13px; color: var(--pfg-green); font-weight: 900; font-size: .8rem; }
+.pfg-step h2, .pfg-checklist h2 { margin: 5px 0 12px; font-size: clamp(1.25rem, 2.4vw, 1.8rem); letter-spacing: -.045em; }
+.pfg-step ul { display: grid; gap: 10px; padding-left: 20px; color: var(--pfg-muted); font-size: .86rem; line-height: 1.7; }
+.pfg-step li::marker { color: var(--pfg-green); }
+.pfg-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 20px 0; }
+.pfg-cards article { padding: 16px; border: 1px solid var(--pfg-line); border-radius: 12px; background: var(--pfg-soft); }
+.pfg-cards h3 { margin: 0 0 8px; font-size: .9rem; }
+.pfg-cards p { margin: 0; font-size: .78rem !important; }
+.pfg-tip { padding: 13px 15px; border-radius: 9px; background: var(--pfg-soft); color: var(--pfg-ink) !important; font-size: .8rem !important; }
+.pfg-checklist label { display: flex; gap: 11px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--pfg-line); color: var(--pfg-muted); font-size: .85rem; line-height: 1.6; }
+.pfg-checklist label input { margin-top: 4px; accent-color: var(--pfg-green); }
+.pfg-disclaimer { margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--pfg-line); font-size: .75rem !important; }
+.pfg-print { padding: 12px 18px; border: 0; border-radius: 9px; background: var(--pfg-green); color: white; font-weight: 800; cursor: pointer; }
+@media (max-width: 850px) {
+    .pfg-layout { grid-template-columns: 1fr; }
+    .pfg-toc { position: static; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .pfg-toc p { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) {
+    .pfg-page { padding: 10px; }
+    .pfg-hero { border-radius: 18px; }
+    .pfg-cards { grid-template-columns: 1fr; }
+    .pfg-step { grid-template-columns: 1fr; gap: 10px; }
+    .pfg-hero-stats { gap: 18px; }
+}
+@media print {
+    .pfg-toc, .pfg-cta, .pfg-print { display: none !important; }
+    .pfg-layout { display: block; }
+    .pfg-step, .pfg-checklist, .pfg-callout { break-inside: avoid; box-shadow: none; }
+    .pfg-page { max-width: none; }
+}
+
+
+/* Print only the investment guide, with no blank pages from the rest of the site. */
+@media print {
+    body * {
+        visibility: hidden !important;
+    }
+    #guide, #guide * {
+        visibility: visible !important;
+    }
+    #guide {
+        display: block !important;
+        position: absolute !important;
+        inset: 0 auto auto 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fff !important;
+        color: #17251c !important;
+    }
+    #guide .pfg-toc,
+    #guide .pfg-cta,
+    #guide .pfg-print {
+        display: none !important;
+    }
+    #guide .pfg-layout {
+        display: block !important;
+    }
+    #guide .pfg-step,
+    #guide .pfg-checklist,
+    #guide .pfg-callout {
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+        box-shadow: none !important;
+    }
+    #guide .pfg-hero {
+        break-after: avoid !important;
+        page-break-after: avoid !important;
+    }
+    @page {
+        size: A4;
+        margin: 12mm;
+    }
+}
+
+
+/* Remove fox branding everywhere on the website. */
+[class*="pf-fox" i],
+[id*="pf-fox" i],
+[class*="fox-icon" i],
+[class*="fox-logo" i],
+img[alt*="fox" i],
+img[title*="fox" i],
+svg[aria-label*="fox" i],
+[title*="fox logo" i] {
+    display: none !important;
+}

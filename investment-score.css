@@ -1,0 +1,53 @@
+/* Investment Score — integrated visual language */
+.investment-score-card {
+    margin-top: 20px;
+    padding: 22px;
+    border: 1px solid var(--border, rgba(120, 150, 130, .2));
+    border-radius: 20px;
+    background: var(--surface, #fff);
+    color: var(--text, #17251c);
+    box-shadow: var(--shadow, 0 14px 38px rgba(0,0,0,.06));
+    overflow: hidden;
+    position: relative;
+    isolation: isolate;
+}
+.investment-score-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 3px;
+    background: linear-gradient(90deg, var(--score-accent, #3a9b68), transparent 85%);
+    z-index: -1;
+}
+.investment-score-heading { display:flex; align-items:flex-start; justify-content:space-between; gap:14px; margin-bottom:18px; }
+.investment-score-kicker { margin:0 0 5px; color:var(--text-faint, #829087); font-size:.68rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+.investment-score-heading h3 { margin:0; color:var(--text, #17251c); font-size:1.08rem; letter-spacing:-.035em; }
+.investment-score-badge { flex:none; padding:6px 9px; border-radius:999px; background:var(--primary-soft, #e0f1e5); color:var(--primary, #187747); font-size:.68rem; font-weight:800; }
+.investment-score-main { display:grid; grid-template-columns:112px minmax(0,1fr); gap:18px; align-items:center; }
+.investment-score-gauge { width:112px; height:112px; position:relative; display:grid; place-items:center; border-radius:50%; background:conic-gradient(var(--score-accent, #3a9b68) calc(var(--score-percent, 0) * 1%), var(--border, #e4e9e5) 0); transition:background 420ms ease; }
+.investment-score-gauge::before { content:""; position:absolute; inset:8px; border-radius:50%; background:var(--surface, #fff); }
+.investment-score-number { z-index:1; text-align:center; font-size:2rem; line-height:1; letter-spacing:-.07em; font-weight:800; color:var(--text, #17251c); }
+.investment-score-number small { display:block; margin-top:5px; font-size:.65rem; letter-spacing:.06em; font-weight:700; color:var(--text-faint, #829087); }
+.investment-score-status { margin:0 0 6px; font-size:1rem; font-weight:800; color:var(--text, #17251c); }
+.investment-score-summary { margin:0; font-size:.82rem; line-height:1.6; color:var(--text-soft, #68766d); }
+.investment-score-breakdown { display:grid; gap:13px; margin-top:22px; }
+.investment-score-row { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:7px 12px; align-items:center; }
+.investment-score-row-label { font-size:.79rem; font-weight:650; color:var(--text-soft, #68766d); }
+.investment-score-row-value { font-size:.78rem; font-weight:800; color:var(--text, #17251c); font-variant-numeric:tabular-nums; }
+.investment-score-track { grid-column:1/-1; height:5px; border-radius:999px; background:var(--border, #e4e9e5); overflow:hidden; }
+.investment-score-track span { display:block; height:100%; width:0; border-radius:inherit; background:var(--score-accent, #3a9b68); transition:width 420ms ease; }
+.investment-score-insights { display:grid; gap:8px; margin-top:20px; }
+.investment-score-insight { display:flex; gap:9px; align-items:flex-start; padding:10px 11px; border-radius:12px; background:var(--surface-soft, #f7faf7); color:var(--text-soft, #68766d); font-size:.78rem; line-height:1.5; }
+.investment-score-insight b { color:var(--text, #17251c); }
+.investment-score-insight-mark { flex:none; font-weight:900; color:var(--score-accent, #3a9b68); }
+.investment-score-disclaimer { margin:16px 0 0; padding-top:13px; border-top:1px solid var(--border, #e4e9e5); color:var(--text-faint, #829087); font-size:.68rem; line-height:1.55; }
+.investment-score-empty { color:var(--text-soft, #68766d); font-size:.85rem; line-height:1.6; }
+@media (max-width: 520px) {
+    .investment-score-card { padding:17px; border-radius:16px; }
+    .investment-score-main { grid-template-columns:88px minmax(0,1fr); gap:14px; }
+    .investment-score-gauge { width:88px; height:88px; }
+    .investment-score-number { font-size:1.65rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .investment-score-gauge, .investment-score-track span { transition:none; }
+}
