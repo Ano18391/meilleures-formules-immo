@@ -536,6 +536,9 @@
         `;
         document.head.appendChild(passwordStyle);
 
+        const eyeIcon = `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>`;
+        const eyeOffIcon = `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18"/><path d="M10.6 10.6a2 2 0 0 0 2.8 2.8"/><path d="M9.9 5.2A10.8 10.8 0 0 1 12 5c6.4 0 10 7 10 7a15 15 0 0 1-3.1 3.9"/><path d="M6.2 6.2C3.5 8 2 12 2 12s3.6 7 10 7c1.3 0 2.5-.3 3.5-.8"/></svg>`;
+
         section.querySelectorAll('input[type="password"]').forEach(input => {
             const wrapper = document.createElement("div");
             wrapper.className = "password-field-wrap";
@@ -545,14 +548,22 @@
             const toggle = document.createElement("button");
             toggle.type = "button";
             toggle.className = "password-toggle";
-            toggle.textContent = "Afficher";
+            toggle.innerHTML = eyeIcon;
+            toggle.classList.add("password-eye-button");
+            toggle.setAttribute("aria-label", "Afficher le mot de passe");
+            toggle.setAttribute("title", "Afficher le mot de passe");
             toggle.setAttribute("aria-label", "Afficher le mot de passe");
             toggle.setAttribute("aria-pressed", "false");
 
             toggle.addEventListener("click", () => {
                 const show = input.type === "password";
                 input.type = show ? "text" : "password";
-                toggle.textContent = show ? "Masquer" : "Afficher";
+                toggle.innerHTML = show ? eyeOffIcon : eyeIcon;
+                toggle.setAttribute(
+                    "aria-label",
+                    show ? "Masquer le mot de passe" : "Afficher le mot de passe"
+                );
+                toggle.setAttribute("title", toggle.getAttribute("aria-label"));
                 toggle.setAttribute(
                     "aria-label",
                     show ? "Masquer le mot de passe" : "Afficher le mot de passe"
@@ -857,49 +868,4 @@
     } else {
         initialize();
     }
-})();
-
-/* FIX: afficher ou masquer les mots de passe */
-(function () {
-    function addPasswordButtons() {
-        document.querySelectorAll('input[type="password"], input[data-password-toggle="ready"]').forEach(function (input) {
-            if (input.dataset.passwordToggleReady === "yes") return;
-
-            input.dataset.passwordToggleReady = "yes";
-
-            var wrapper = document.createElement("span");
-            wrapper.style.cssText = "position:relative;display:flex;width:100%;align-items:center;";
-
-            input.parentNode.insertBefore(wrapper, input);
-            wrapper.appendChild(input);
-
-            input.style.setProperty("width", "100%", "important");
-            input.style.setProperty("box-sizing", "border-box", "important");
-            input.style.setProperty("padding-right", "100px", "important");
-
-            var button = document.createElement("button");
-            button.type = "button";
-            button.textContent = "Afficher";
-            button.style.cssText = "position:absolute;right:8px;top:50%;transform:translateY(-50%);z-index:10;cursor:pointer;padding:6px 8px;border:0;border-radius:6px;background:transparent;color:inherit;font:inherit;font-size:13px;";
-
-            button.addEventListener("click", function () {
-                var visible = input.type === "password";
-                input.type = visible ? "text" : "password";
-                button.textContent = visible ? "Masquer" : "Afficher";
-            });
-
-            wrapper.appendChild(button);
-        });
-    }
-
-    if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", addPasswordButtons);
-    } else {
-        addPasswordButtons();
-    }
-
-    new MutationObserver(addPasswordButtons).observe(document.documentElement, {
-        childList: true,
-        subtree: true
-    });
 })();
